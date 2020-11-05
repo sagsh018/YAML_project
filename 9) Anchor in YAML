@@ -1,0 +1,31 @@
+1) store and reuse the data
+2) Anchor names can be reused
+3) Define anchor tag with &
+4) reference anchor tag with *
+5) Anchor is a single scalar 
+
+Example 1
+========
+
+---
+host: phl-42
+datacenter:
+  location: &PHL Philadelphia
+---
+host: phl-43
+datacenter:
+  location: *PHL
+
+So no need to write the datacenter location name again
+
+Example 1:
+=============
+
+---
+roles: &wphost
+  - webserver
+  - wp_database
+--- 
+roles: *wphost
+
+So here no need to write the sequence again.

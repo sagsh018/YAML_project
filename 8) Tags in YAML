@@ -1,0 +1,29 @@
+1) Tags in YAML are mainly used for three purpose:
+    a) Setting up the custom URI, so that they can be used in conjuntion of any API call to YAML in application
+    b) setting up the local tags and then referencing them in the URI tags
+    c) setting up the data type for scalars.
+2)  URI Tags
+    =========
+    syntax:
+        %TAG ! prefix
+
+        %TAG ! tag:hostsdata:phl:
+        This URI tag is used in the metadata location of the yaml file. see the host.yaml file to see how it is 
+        used
+3) Local tags
+   ===========
+   syntax:
+        single exclamation point, no space(!)
+        example:
+            location: !PHL philadelphia
+        and then we can reference this in the URI tag as below
+        URI: tag:hostdata:phl:PHL
+4) Setting up the data type
+   =========================
+   This force the data type; don't rely on parser
+   syntax:
+        use two exclamation point no space (!!)
+        example:
+        ========
+            cabinet: !!str 13
+            cab_unit: !!str 2    

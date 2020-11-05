@@ -1,0 +1,32 @@
+# file that contains the information about differnt servers in different data center location
+%TAG ! tag:hostdata:phl:
+---
+host: phl-42
+datacenter:
+  location: philadelphfia
+  cab: "13"
+  cab_unit: "3"
+roles:
+  - webserver
+  - wp_databases
+downtime_sch: |
+  2020-11-19 - kernel upgrade
+  2020-11-25 - security fix
+comments: >
+  Experiencing high I/O
+  since 2020-08-20.
+  Current investigating
+---
+host: phl-43 # This server is in same data center location
+datacenter:
+  location: someplace2
+  cab: "13"
+  cab_unit: "4"
+...
+---
+host: hel-44 # this server is in different data center location.
+datacenter:
+  location: somewhereelse
+  cab: "15"
+  cab_unit: "5" 
+...

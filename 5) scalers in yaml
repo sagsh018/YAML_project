@@ -1,0 +1,46 @@
+1) scalar in python are nothing but the workds we use to represent both keys and there values in a yaml file
+    example:
+        host: phl-42
+        here host is also a string scalar and phl-42 is also a string scalar.
+        cab: 13 
+        here cab is string scalar and 13 is numeric scalar.
+2) In scalars, whitespaces are allowed with using any quotes to enclose them
+    example:
+        name: Sagar Sharma
+        here Sagar sharma, will be counted as valid scalar and will be accepted by yaml and there is no need to
+        eclose this in quotes
+3) So basically scalars are presented with zero or more unicode characters
+4) From above understanding we can also say that mappings are nothing but assigning one scalar value to another scalar value 
+5) We can convert non string scalars to string scalars using single or double quotes    
+    note that use of double quotes also permists use of escape characters such as \n, \t etc.
+6) We can also have multiline scalars in our yaml code, by using two ways:
+    a) Block Style (This preserves the newlines)
+        example:
+        =========
+        downtime_sch: |
+          2020-11-19 - kernel upgrade
+          2020-11-25 - security fix
+        here we are using the special character "|". this method is going to preserves the use of newlines and 
+        when this yaml code will be processed these multilines are going to be visible and multiple lines only.
+    b) Folded style(This converts the newlines/spacing into a single space)
+        example:
+        ========
+        comments: >
+          Experiencing high I/O
+          since 2020-08-20.
+          Current investigating
+        So here we are using special character ">". and then this yaml code will be processed it will be represented
+        as a single line with single spaces between the words.
+7) But suppose if we want to keep the things in different lines using folded style, there is a way to do so by using    
+    second indent as below
+        example:
+        ==========
+        comments: >
+          Experiencing high I/O
+          since 2020-08-20.
+          Current investigating
+            
+            sagar
+            sharma
+        So if you will notice in the above example, we have kept sagar and sharma after indenting both the names
+        and now they will appear in two different lines when this yaml code will be processed.

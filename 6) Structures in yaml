@@ -1,0 +1,58 @@
+1) structures in yaml are used to structure the yaml file and make it more understandable.
+2) Structure in yaml helps in having multiple directives/documents in one single file 
+3) These are optional within yaml specification, but may be a requirement for different platform
+4) Two types:
+    a) Triple dash(---) : To mark the start of a file.
+        structure
+        =========
+
+        ---
+        ---
+        ---
+
+        These are also called as Multi-Doc stream, where we can have mulitple document for one stream,
+        let say suppose i want to enter the datacenter information for another server in same datacenter location.
+        then we can use "---" to mark the start of new doc file in a same stream
+        example:
+        =========
+
+        ---
+        host: phl-43
+        datacenter:
+          location: someplace2
+          cab: "13"
+          cab_unit: "4"
+        check out the hosts.yaml file to see how this part is used
+    b) Triple dots (...) : These are used to mark the end without closing the data stream.
+        structure
+        ==========
+
+        ---
+        ...
+        ---
+
+        These are also called as "Stream with end" 
+        Suppose i want to enter the server from completely different datacenter location and want to add it after
+        ending the current doc without closing the stream
+        example
+        =========
+
+        ---
+        host: phl-43
+        datacenter:
+          location: someplace2
+          cab: "13"
+          cab_unit: "4"
+        ...
+        ---
+        host: hel-44
+        datacenter:
+          location: somewhereelse
+          cab: "15"
+          cab_unit: "5"
+        ...
+
+        check out the host.yaml file to have a look on how these are used inside the yaml file.
+5) these triple dashes are used when we create kubernetes configuration file because kubernetes asks to add all the
+    docs in one file only.
+    

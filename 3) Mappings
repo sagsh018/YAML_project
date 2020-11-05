@@ -1,0 +1,33 @@
+1) Mappings are nothing but associated arrays, hash tables, key:value pairs, collection
+2) Denoted with colon (:) and space (: )
+3) No duplicate key
+4) Mappings can be nested
+
+So here we will start writing some of the YAML code. we will try writing the code both in block style and Flow
+style
+
+check out the file created : hosts.yaml in the same working space.
+
+Block style
+===========
+host: phl-42 ----- 1
+datacenter: ----- 2
+  location: someplace
+  cab: 13
+  cab_unit: 3
+
+So here:
+a) line number 1 in above YAML code is what we call a key value pair.
+b) and this is what we call as mapping. means we are mapping the key "host" to value "phl-42"
+c) similarly datacenter is another key
+d) note that datacenter key and its mapping is called a kind of nested mapping where under key datacenter we have
+    another keys and there value mappings.
+e) Another thing to note here is that we cannot have suplicate keys in our YAML code.
+    for example as we have already used the datacenter key, so we cannot reuse it anywhere below in the code.
+
+Flow style
+==============
+host: "phl-42"
+datacenter: { location: someplace , cab: 13, cab_unit: 3 }
+
+But we will stick to block style YAML for rest of this course.

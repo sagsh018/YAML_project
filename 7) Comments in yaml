@@ -1,0 +1,11 @@
+1) comments in yaml are put using (# ). notice there should be a whitespace after the # symbol
+2) we can have comments at the top of yaml file
+    example: # This yaml file contain the information about the servers in different data center
+3) We can also have inline comment, which should be followed at the end of line
+    example: host: phl-43 # This is another server in same data center
+4) comments cannot be contained in scalars 
+    example " # " - not allowed
+5) Comments are for human and no actual content should be conveyed through comment
+6) blank lines function as the commented lines 
+
+see the host.yaml file to see how we are using the comments

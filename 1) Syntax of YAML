@@ -1,0 +1,31 @@
+1) There should be spaces and not tabs
+2) YAML is indented  for structure
+3) YAML uses dashes for lists
+4) YAML uses Colons for key-value pair
+
+Example
+=============
+host: phl-42
+datacenter:
+  location: somewhere  ---- over here we have used 2 spaces instead of tab, and also the key-value pair using colons
+  cab: 13 -- again 2 spaces and not tab
+roles:
+  - web -- having 3 spaces and not tab alsong with dashes to indicate list.
+  - dns
+
+5) Character support
+    a) YAML support printable Unicode
+    b) YAML does not support below symbols:
+        - C0/C1 block
+            - Exceptions:
+                - tab
+                - line feeds
+                - carriage return
+                - delete
+                - next line
+        - surrogates
+    c) Encoding:
+        - UTF-8
+        - UTF-16
+        - UTF-32
+            - Mendatory for JSON compatibility

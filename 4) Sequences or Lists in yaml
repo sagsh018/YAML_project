@@ -1,0 +1,44 @@
+1) Sequences or lists in yaml are also called arrays or collections
+    a) Note that collection in yaml can be any group of things collectively indented a little for any key.
+        that will come under the catagory of collections.
+        and thats the reason mappings are also called collections.
+2) Sequences/Lists in yaml are denoted with dashes (- )
+3) Sequences/Lists in yaml can be combined with mappings in two ways:
+    a) mappings of sequences/lists
+        example:
+        =========
+        roles:
+          - web
+          - dns
+        So here we are mapping a key "roles" to the sequence/lists
+    b) sequence/list of mappings
+        example
+        =========
+        - locations: somewhare
+          cab: 13
+          cab_unit: 3
+        So here we have a sequence "location" which contains the list of mapping under it.
+4) So in our hosts.yaml example file we can add the sequence as below.
+    roles:
+      - webserver
+      - wp_database
+    check out the hosts.yaml file to understand
+5) The things you cannot do while writing the sequences yaml code:
+    a) Sequences cannot be blank
+        example:
+            - playbooks:
+                - wordpress
+                -                 ==> This blank is not allowed. if you want to put it blank than use "" to indicate blank.
+                - mysql
+            and also this is an example of sequences of sequence.
+    b) sequences cannot be nested without mapping
+        example:
+            - playbooks
+                - wordpress
+                - mysql
+            notice that after the main key "playbooks" we haven't kept the colon which will not create it a mapping
+            and mappings cannot be missing.
+
+6) we can also mention the sequences in yaml file using the Flow style as well:
+    example:
+        roles: [ webserver, wp_database ]
